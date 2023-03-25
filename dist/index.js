@@ -2,6 +2,9 @@
 const form = document.querySelector('.form');
 const itemInput = document.querySelector('.form__input');
 const list = document.querySelector('.items');
+const modal = document.querySelector('.modal');
+const closeModal = document.querySelector('.close-modal');
+const modalText = document.querySelector('.modal-text');
 
 const addItem = (e) => {
 	e.preventDefault();
@@ -10,7 +13,8 @@ const addItem = (e) => {
 
 	// Validation
 	if (itemValue === '') {
-		alert('Wprowadź przedmiot');
+		modalText.innerText = 'Wprowadź Produkt';
+		modal.showModal();
 		return;
 	}
 
@@ -24,6 +28,8 @@ const addItem = (e) => {
 	li.appendChild(button);
 
 	list.appendChild(li);
+
+	itemInput.value = '';
 };
 
 const createButton = (classes) => {
@@ -44,3 +50,7 @@ const createIcon = (classes) => {
 
 // Event Listeners
 form.addEventListener('submit', addItem);
+
+closeModal.addEventListener('click', () => {
+	modal.close();
+});

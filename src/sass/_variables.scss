@@ -37,6 +37,28 @@ $clr-red: #a10202;
     font-weight: bold;
 }
 
+// Modal 
+@mixin modal {
+    padding: 1.5rem 2rem;
+    background-color: $clr-primary;
+    color: $clr-text;
+    border: $brd-main;
+    border-radius: $brd-radius-small;
+    margin: 9rem auto;
+    width: 350px;
+    text-align: center;
+    box-shadow: none;
+}
+
+// Close Modal
+@mixin closeBtn {
+    border: $brd-main;
+    border-radius: $brd-radius-small;
+    padding: .4rem 1rem;
+    width: 100%;
+    margin-top: .6rem;
+}
+
 // Hover
 @mixin hover {
     background-color: $clr-teriary-dark;

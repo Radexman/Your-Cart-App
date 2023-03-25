@@ -59,4 +59,31 @@
             @include input;
         }
     }
+
+    .modal {
+        @include modal;
+
+        .close-modal {
+            @include closeBtn;
+            cursor: pointer;
+            transition: $transition;
+
+            &:hover {
+                @include hover;
+            }
+
+            &:active {
+                @include active;
+            }
+        }
+
+        &::backdrop {
+            backdrop-filter: blur(3px) saturate(50%);
+        }
+
+        .modal-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+    }
 }
