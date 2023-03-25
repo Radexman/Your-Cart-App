@@ -1,0 +1,62 @@
+// Header and main styling
+
+.header {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+
+    &__logo {
+        width: 80px;
+        aspect-ratio: 1 / 1;
+    }
+
+    &__h1 {
+        font-family: $font-brand;
+    }
+}
+
+.main {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+
+    .form {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+
+        &__control {
+            
+            .form__input {
+                @include input;
+            }
+
+            .form__button {
+                @include input;
+                cursor: pointer;
+                transition: $transition;
+
+                    &:hover {
+                        @include hover;
+                    }
+
+                    &:active {
+                        @include active;
+                    }
+
+                .fa-plus {
+                    margin-right: .7rem;
+                }
+            }
+        }
+    }
+
+    .filter {
+        &__input {
+            @include input;
+        }
+    }
+}

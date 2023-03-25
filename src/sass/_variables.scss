@@ -1,0 +1,57 @@
+// ===== All the variables and Mixins ===== //
+
+// Typography
+$font-primary: 'Roboto', sans-serif;
+$font-brand: 'Pacifico', cursive;
+$responsive-font: clamp(1.2rem, 2vw, 3rem);
+
+// Colors
+$clr-primary: #D0D3D9;
+$clr-secondary: #8B8C81;
+$clr-teriary: #BFBDA4;
+$clr-teriary-dark: #59533F;
+$clr-text: #0D0D0D;
+$clr-red: #a10202;
+
+// Input
+@mixin input {
+    width: 350px;
+    text-align: center;
+    padding: .4em;
+    margin-top: .4rem;
+    border: $brd-main;
+    border-radius: $brd-radius-small;
+}
+
+// Item
+@mixin item {
+    min-width: 350px;
+    border: $brd-main;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: $brd-radius-big;
+    margin-block: .3rem;
+    padding: .4rem .8rem;
+    background-color: $clr-secondary;
+}
+
+// Hover
+@mixin hover {
+    background-color: $clr-teriary-dark;
+    box-shadow: 3px 3px 5px $clr-text;
+}
+
+// Active
+@mixin active {
+    background-color: $clr-primary;
+    color: $clr-text;
+}
+
+// Borders
+$brd-radius-small: 4px;
+$brd-radius-big: 13px;
+$brd-main: 2px solid $clr-text;
+
+// Transition
+$transition: .2s ease-in;

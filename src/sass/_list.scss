@@ -1,0 +1,47 @@
+// Styles for list
+.items {
+    margin-top: 30px;
+    display: flex;
+    flex-flow: column nowrap;
+    list-style: none;
+
+    &__item {
+        @include item;
+    }
+
+    .items__button {
+        padding-inline: 7px;
+        border: none;
+        background-color: $clr-secondary;
+        cursor: pointer;
+        transition: $transition;
+
+        .fa-xmark {
+            font-size: 1.5rem;
+            transition: $transition;
+
+            &:hover {
+                color: $clr-red;
+            }
+        }
+    }
+}
+
+.button-clear {
+    @include input;
+    cursor: pointer;
+    margin-top: 50px;
+    transition: $transition;
+
+    .fa-trash {
+        margin-right: .7rem;
+    }
+
+    &:hover{
+        @include hover;
+    }
+
+    &:active {
+        @include active;
+    }
+}

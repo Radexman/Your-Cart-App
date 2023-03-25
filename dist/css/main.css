@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+.header {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.header__logo {
+  width: 80px;
+  aspect-ratio: 1/1;
+}
+.header__h1 {
+  font-family: "Pacifico", cursive;
+}
+
+.main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.main .form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.main .form__control .form__input {
+  width: 350px;
+  text-align: center;
+  padding: 0.4em;
+  margin-top: 0.4rem;
+  border: 2px solid #0D0D0D;
+  border-radius: 4px;
+}
+.main .form__control .form__button {
+  width: 350px;
+  text-align: center;
+  padding: 0.4em;
+  margin-top: 0.4rem;
+  border: 2px solid #0D0D0D;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+.main .form__control .form__button:hover {
+  background-color: #59533F;
+  box-shadow: 3px 3px 5px #0D0D0D;
+}
+.main .form__control .form__button:active {
+  background-color: #D0D3D9;
+  color: #0D0D0D;
+}
+.main .form__control .form__button .fa-plus {
+  margin-right: 0.7rem;
+}
+.main .filter__input {
+  width: 350px;
+  text-align: center;
+  padding: 0.4em;
+  margin-top: 0.4rem;
+  border: 2px solid #0D0D0D;
+  border-radius: 4px;
+}
+
+.items {
+  margin-top: 30px;
+  display: flex;
+  flex-flow: column nowrap;
+  list-style: none;
+}
+.items__item {
+  min-width: 350px;
+  border: 2px solid #0D0D0D;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 13px;
+  margin-block: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #8B8C81;
+}
+.items .items__button {
+  padding-inline: 7px;
+  border: none;
+  background-color: #8B8C81;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+.items .items__button .fa-xmark {
+  font-size: 1.5rem;
+  transition: 0.2s ease-in;
+}
+.items .items__button .fa-xmark:hover {
+  color: #a10202;
+}
+
+.button-clear {
+  width: 350px;
+  text-align: center;
+  padding: 0.4em;
+  margin-top: 0.4rem;
+  border: 2px solid #0D0D0D;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 50px;
+  transition: 0.2s ease-in;
+}
+.button-clear .fa-trash {
+  margin-right: 0.7rem;
+}
+.button-clear:hover {
+  background-color: #59533F;
+  box-shadow: 3px 3px 5px #0D0D0D;
+}
+.button-clear:active {
+  background-color: #D0D3D9;
+  color: #0D0D0D;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark light;
+  font-size: clamp(1.2rem, 2vw, 3rem);
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+input, textarea, button, select {
+  font: inherit;
+}
+
+body {
+  background-color: #D0D3D9;
+  color: #0D0D0D;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  padding: 0.5rem 1rem;
+}
+
+/*# sourceMappingURL=main.css.map */

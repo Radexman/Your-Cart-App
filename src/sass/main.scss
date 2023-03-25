@@ -1,0 +1,40 @@
+// ===== Initial reset and imports ===== //
+
+// Partials
+@import './variables';
+@import './header';
+@import './list';
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    color-scheme: dark light;
+    font-size: $responsive-font;
+}
+
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+}
+
+input, textarea, button, select {
+    font: inherit;
+}
+
+body {
+    background-color: $clr-primary;
+    color: $clr-text;
+    font-family: $font-primary;
+    min-height: 100vh;
+    padding: .5rem 1rem;
+}
