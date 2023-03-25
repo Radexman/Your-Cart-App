@@ -15,7 +15,7 @@ $clr-red: #a10202;
 
 // Input
 @mixin input {
-    width: 350px;
+    min-width: 350px;
     text-align: center;
     padding: .4em;
     margin-top: .4rem;
@@ -30,10 +30,11 @@ $clr-red: #a10202;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: $brd-radius-big;
+    border-radius: $brd-radius-small;
     margin-block: .3rem;
-    padding: .4rem .8rem;
+    padding: .4rem 1rem;
     background-color: $clr-secondary;
+    font-weight: bold;
 }
 
 // Hover

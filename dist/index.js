@@ -3,13 +3,6 @@ const itemForm = document.querySelector('.form');
 const itemInput = document.querySelector('.form__input');
 const itemList = document.querySelector('.items');
 
-/* <li class="items__item">
-	Apples
-	<button class="items__button">
-		<i class="fa-solid fa-xmark"></i>
-	</button>
-</li>; */
-
 const addItem = (e) => {
 	e.preventDefault();
 	const newItem = itemInput.value;
