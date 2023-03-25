@@ -1,36 +1,38 @@
 // DOM Elements
-const itemForm = document.querySelector('.form');
+const form = document.querySelector('.form');
 const itemInput = document.querySelector('.form__input');
-const itemList = document.querySelector('.items');
+const list = document.querySelector('.items');
 
 const addItem = (e) => {
 	e.preventDefault();
-	const newItem = itemInput.value;
+
+	const itemValue = itemInput.value;
 
 	// Validation
-	if (newItem === '') {
-		alert('Wprowadź produkt');
+	if (itemValue === '') {
+		alert('Wprowadź przedmiot');
 		return;
 	}
 
-	// Create list item
+	// Create Item
 	const li = document.createElement('li');
 	li.className = 'items__item';
-	const liText = document.createTextNode(newItem);
+	const liText = document.createTextNode(itemValue);
 	li.appendChild(liText);
 
 	const button = createButton('items__button');
 	li.appendChild(button);
-	itemList.appendChild(li);
 
-	itemInput.value = '';
+	list.appendChild(li);
 };
 
 const createButton = (classes) => {
 	const button = document.createElement('button');
 	button.className = classes;
+
 	const icon = createIcon('fa-solid fa-xmark');
 	button.appendChild(icon);
+
 	return button;
 };
 
@@ -41,4 +43,4 @@ const createIcon = (classes) => {
 };
 
 // Event Listeners
-itemForm.addEventListener('submit', addItem);
+form.addEventListener('submit', addItem);
