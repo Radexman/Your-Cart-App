@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+.not-active {
+  display: none;
+}
+
 .header {
   display: flex;
   flex-flow: column nowrap;
@@ -63,7 +67,8 @@
   border: 2px solid #0D0D0D;
   border-radius: 4px;
 }
-.main .modal {
+.main .modal,
+.main .modal-two {
   padding: 1.5rem 2rem;
   background-color: #D0D3D9;
   color: #0D0D0D;
@@ -74,7 +79,8 @@
   text-align: center;
   box-shadow: none;
 }
-.main .modal .close-modal {
+.main .modal .close-modal,
+.main .modal-two .close-modal {
   border: 2px solid #0D0D0D;
   border-radius: 4px;
   padding: 0.4rem 1rem;
@@ -83,20 +89,32 @@
   cursor: pointer;
   transition: 0.2s ease-in;
 }
-.main .modal .close-modal:hover {
+.main .modal .close-modal:hover,
+.main .modal-two .close-modal:hover {
   background-color: #59533F;
   box-shadow: 3px 3px 5px #0D0D0D;
 }
-.main .modal .close-modal:active {
+.main .modal .close-modal:active,
+.main .modal-two .close-modal:active {
   background-color: #D0D3D9;
   color: #0D0D0D;
 }
-.main .modal::backdrop {
+.main .modal::backdrop,
+.main .modal-two::backdrop {
   backdrop-filter: blur(3px) saturate(50%);
 }
-.main .modal .modal-text {
+.main .modal .modal-text,
+.main .modal-two .modal-text {
   font-size: 1.4rem;
   font-weight: 700;
+}
+
+.btn-positive {
+  background-color: rgba(40, 172, 23, 0.7254901961);
+}
+
+.btn-negative {
+  background-color: rgba(161, 2, 2, 0.6784313725);
 }
 
 .items {

@@ -60,7 +60,8 @@
         }
     }
 
-    .modal {
+    .modal,
+    .modal-two {
         @include modal;
 
         .close-modal {
@@ -86,4 +87,12 @@
             font-weight: 700;
         }
     }
+}
+
+.btn-positive {
+    @include btnPositive;
+}
+
+.btn-negative {
+    @include btnNegative;
 }

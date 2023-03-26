@@ -59,6 +59,15 @@ $clr-red: #a10202;
     margin-top: .6rem;
 }
 
+// Button types 
+@mixin btnPositive {
+    background-color: #28ac17b9;
+}
+
+@mixin btnNegative {
+    background-color: #a10202ad;
+}
+
 // Hover
 @mixin hover {
     background-color: $clr-teriary-dark;
@@ -69,6 +78,10 @@ $clr-red: #a10202;
 @mixin active {
     background-color: $clr-primary;
     color: $clr-text;
+}
+
+.not-active {
+    display: none;
 }
 
 // Borders

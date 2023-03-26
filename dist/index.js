@@ -3,9 +3,12 @@ const form = document.querySelector('.form');
 const itemInput = document.querySelector('.form__input');
 const list = document.querySelector('.items');
 const modal = document.querySelector('.modal');
+const modalTwo = document.querySelector('.modal-two');
 const closeModal = document.querySelector('.close-modal');
-const modalText = document.querySelector('.modal-text');
+const modalTwoConfirm = document.querySelector('#modal-two-confirm');
+const modalTwoDeclane = document.querySelector('#modal-two-decline');
 const clearButton = document.querySelector('.button-clear');
+const itemFilter = document.querySelector('.filter__input');
 
 const addItem = (e) => {
 	e.preventDefault();
@@ -14,7 +17,6 @@ const addItem = (e) => {
 
 	// Validation
 	if (itemValue === '') {
-		modalText.innerText = 'Wprowadź Produkt';
 		modal.showModal();
 		return;
 	}
@@ -28,7 +30,10 @@ const addItem = (e) => {
 	const button = createButton('items__button remove-item');
 	li.appendChild(button);
 
+	// Add li
 	list.appendChild(li);
+
+	checkUI();
 
 	itemInput.value = '';
 };
@@ -52,12 +57,30 @@ const createIcon = (classes) => {
 const removeItem = (e) => {
 	if (e.target.parentElement.classList.contains('remove-item')) {
 		e.target.parentElement.parentElement.remove();
+		checkUI();
 	}
 };
 
 const clearItems = (e) => {
+	modalTwo.showModal();
+};
+
+const deleteItems = () => {
+	modalTwo.close();
 	while (list.firstChild) {
 		list.removeChild(list.firstChild);
+		checkUI();
+	}
+};
+
+const checkUI = () => {
+	const items = list.querySelectorAll('li');
+	if (items.length === 0) {
+		clearButton.classList.add('not-active');
+		itemFilter.classList.add('not-active');
+	} else {
+		clearButton.classList.remove('not-active');
+		itemFilter.classList.remove('not-active');
 	}
 };
 
@@ -71,3 +94,11 @@ closeModal.addEventListener('click', () => {
 list.addEventListener('click', removeItem);
 
 clearButton.addEventListener('click', clearItems);
+
+modalTwoDeclane.addEventListener('click', () => {
+	modalTwo.close();
+});
+
+modalTwoConfirm.addEventListener('click', deleteItems);
+
+checkUI();
