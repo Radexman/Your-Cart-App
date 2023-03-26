@@ -4,6 +4,10 @@
   background-color: rgba(40, 172, 23, 0.7254901961);
 }
 
+.edit-mode {
+  color: rgba(40, 172, 23, 0.7254901961);
+}
+
 .not-active {
   display: none;
 }
@@ -137,13 +141,15 @@
   border-radius: 4px;
   margin-block: 0.3rem;
   padding: 0.4rem 1rem;
-  background-color: #8B8C81;
+  background-color: #444440;
+  color: #D0D3D9;
   font-weight: bold;
+  cursor: pointer;
 }
 .items .items__button {
   padding-inline: 7px;
   border: none;
-  background-color: #8B8C81;
+  background-color: #444440;
   cursor: pointer;
   transition: 0.2s ease-in;
 }

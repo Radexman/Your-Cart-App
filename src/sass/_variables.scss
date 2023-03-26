@@ -8,6 +8,7 @@ $responsive-font: clamp(1.2rem, 2vw, 3rem);
 // Colors
 $clr-primary: #D0D3D9;
 $clr-secondary: #8B8C81;
+$clr-secondary-dark: #444440;
 $clr-teriary: #BFBDA4;
 $clr-teriary-dark: #59533F;
 $clr-text: #141414;
@@ -34,8 +35,10 @@ $clr-green: #28ac17b9;
     border-radius: $brd-radius-small;
     margin-block: .3rem;
     padding: .4rem 1rem;
-    background-color: $clr-secondary;
+    background-color: $clr-secondary-dark;
+    color: $clr-primary;
     font-weight: bold;
+    cursor: pointer;
 }
 
 // Modal 
@@ -67,6 +70,10 @@ $clr-green: #28ac17b9;
 
 .green-btn {
     background-color: $clr-green;
+}
+
+.edit-mode {
+    color: $clr-green;
 }
 
 @mixin btnNegative {

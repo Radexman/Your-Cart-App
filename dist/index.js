@@ -31,6 +31,16 @@ const onAddItemSubmit = (e) => {
 		return;
 	}
 
+	// Check for edit mode
+	if (isEditMode) {
+		const itemToEdit = list.querySelector('.edit-mode');
+
+		removeItemFromStorage(itemToEdit.textContent);
+		itemToEdit.classList.remove('edit-mode');
+		itemToEdit.remove();
+		isEditMode = false;
+	}
+
 	// Create item DOM element
 	addItemToDOM(itemValue);
 
@@ -103,9 +113,10 @@ const onClickItem = (e) => {
 const setItemToEdit = (item) => {
 	isEditMode = true;
 
-	list.querySelectorAll('li').forEach((i) => (i.style.color = 'black'));
+	list.querySelectorAll('li').forEach((i) => (i.style.color = '#D0D3D9'));
 
-	item.style.color = '#ccc';
+	item.classList.add('edit-mode');
+	item.style.color = '#28ac17b9';
 	formBtn.innerHTML = '<i class="fa-solid fa-pen"></i> Zmień nazwę';
 	formBtn.classList.add('green-btn');
 	itemInput.value = item.textContent;
@@ -171,6 +182,11 @@ const checkUI = () => {
 		clearButton.classList.remove('not-active');
 		itemFilter.classList.remove('not-active');
 	}
+
+	formBtn.innerHTML = '<i class="fa-solid fa-plus"></i> Dodaj Produkt';
+	formBtn.classList.remove('green-btn');
+	formBtn.style.color = '#D0D3D9';
+	isEditMode = false;
 };
 
 // Initialize app
