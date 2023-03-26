@@ -9,6 +9,8 @@ const modalTwoConfirm = document.querySelector('#modal-two-confirm');
 const modalTwoDeclane = document.querySelector('#modal-two-decline');
 const clearButton = document.querySelector('.button-clear');
 const itemFilter = document.querySelector('.filter__input');
+const formBtn = form.querySelector('button');
+let isEditMode = false;
 
 const displayItems = () => {
 	const itemsFromStorage = getItemsFromStorage();
@@ -93,7 +95,20 @@ const getItemsFromStorage = () => {
 const onClickItem = (e) => {
 	if (e.target.parentElement.classList.contains('remove-item')) {
 		removeItem(e.target.parentElement.parentElement);
+	} else {
+		setItemToEdit(e.target);
 	}
+};
+
+const setItemToEdit = (item) => {
+	isEditMode = true;
+
+	list.querySelectorAll('li').forEach((i) => (i.style.color = 'black'));
+
+	item.style.color = '#ccc';
+	formBtn.innerHTML = '<i class="fa-solid fa-pen"></i> Zmień nazwę';
+	formBtn.classList.add('green-btn');
+	itemInput.value = item.textContent;
 };
 
 const removeItem = (item) => {

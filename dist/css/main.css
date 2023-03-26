@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+.green-btn {
+  background-color: rgba(40, 172, 23, 0.7254901961);
+}
+
 .not-active {
   display: none;
 }

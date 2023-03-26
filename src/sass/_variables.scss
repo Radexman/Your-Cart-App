@@ -65,6 +65,10 @@ $clr-green: #28ac17b9;
     background-color: $clr-green;
 }
 
+.green-btn {
+    background-color: $clr-green;
+}
+
 @mixin btnNegative {
     background-color: $clr-red;
 }
