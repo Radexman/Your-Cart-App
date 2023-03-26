@@ -73,6 +73,21 @@ const deleteItems = () => {
 	}
 };
 
+const filterItems = (e) => {
+	const items = list.querySelectorAll('li');
+	const text = e.target.value.toLowerCase();
+
+	items.forEach((item) => {
+		const itemName = item.firstChild.textContent.toLowerCase();
+
+		if (itemName.indexOf(text) != -1) {
+			item.style.display = 'flex';
+		} else {
+			item.style.display = 'none';
+		}
+	});
+};
+
 const checkUI = () => {
 	const items = list.querySelectorAll('li');
 	if (items.length === 0) {
@@ -100,5 +115,7 @@ modalTwoDeclane.addEventListener('click', () => {
 });
 
 modalTwoConfirm.addEventListener('click', deleteItems);
+
+itemFilter.addEventListener('input', filterItems);
 
 checkUI();
