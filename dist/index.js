@@ -90,11 +90,30 @@ const getItemsFromStorage = () => {
 	return itemsFromStorage;
 };
 
-const removeItem = (e) => {
+const onClickItem = (e) => {
 	if (e.target.parentElement.classList.contains('remove-item')) {
-		e.target.parentElement.parentElement.remove();
-		checkUI();
+		removeItem(e.target.parentElement.parentElement);
 	}
+};
+
+const removeItem = (item) => {
+	// Remove item from DOM
+	item.remove();
+
+	// Remove item ftom storage
+	removeItemFromStorage(item.textContent);
+
+	checkUI();
+};
+
+const removeItemFromStorage = (item) => {
+	let itemsFromStorage = getItemsFromStorage();
+
+	// Filter out item
+	itemsFromStorage = itemsFromStorage.filter((i) => i !== item);
+
+	// Reset to local storage
+	localStorage.setItem('items', JSON.stringify(itemsFromStorage));
 };
 
 const clearItems = (e) => {
@@ -105,8 +124,12 @@ const deleteItems = () => {
 	modalTwo.close();
 	while (list.firstChild) {
 		list.removeChild(list.firstChild);
-		checkUI();
 	}
+
+	// Clear from local storage
+	localStorage.removeItem('items');
+
+	checkUI();
 };
 
 const filterItems = (e) => {
@@ -144,7 +167,7 @@ const init = () => {
 		modal.close();
 	});
 
-	list.addEventListener('click', removeItem);
+	list.addEventListener('click', onClickItem);
 
 	clearButton.addEventListener('click', clearItems);
 
