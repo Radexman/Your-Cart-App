@@ -10,7 +10,15 @@ const modalTwoDeclane = document.querySelector('#modal-two-decline');
 const clearButton = document.querySelector('.button-clear');
 const itemFilter = document.querySelector('.filter__input');
 
-const addItem = (e) => {
+const displayItems = () => {
+	const itemsFromStorage = getItemsFromStorage();
+	itemsFromStorage.forEach((item) => {
+		addItemToDOM(item);
+	});
+	checkUI();
+};
+
+const onAddItemSubmit = (e) => {
 	e.preventDefault();
 
 	const itemValue = itemInput.value;
@@ -21,10 +29,22 @@ const addItem = (e) => {
 		return;
 	}
 
+	// Create item DOM element
+	addItemToDOM(itemValue);
+
+	// Add item to local storage
+	addItemToStorage(itemValue);
+
+	checkUI();
+
+	itemInput.value = '';
+};
+
+const addItemToDOM = (item) => {
 	// Create Item
 	const li = document.createElement('li');
 	li.className = 'items__item';
-	const liText = document.createTextNode(itemValue);
+	const liText = document.createTextNode(item);
 	li.appendChild(liText);
 
 	const button = createButton('items__button remove-item');
@@ -32,10 +52,6 @@ const addItem = (e) => {
 
 	// Add li
 	list.appendChild(li);
-
-	checkUI();
-
-	itemInput.value = '';
 };
 
 const createButton = (classes) => {
@@ -52,6 +68,26 @@ const createIcon = (classes) => {
 	const icon = document.createElement('i');
 	icon.className = classes;
 	return icon;
+};
+
+const addItemToStorage = (item) => {
+	const itemsFromStorage = getItemsFromStorage();
+
+	itemsFromStorage.push(item);
+
+	// Convert to JSON string and set to local storage
+	localStorage.setItem('items', JSON.stringify(itemsFromStorage));
+};
+
+const getItemsFromStorage = () => {
+	let itemsFromStorage;
+	if (localStorage.getItem('items') === null) {
+		itemsFromStorage = [];
+	} else {
+		itemsFromStorage = JSON.parse(localStorage.getItem('items'));
+	}
+
+	return itemsFromStorage;
 };
 
 const removeItem = (e) => {
@@ -99,23 +135,30 @@ const checkUI = () => {
 	}
 };
 
-// Event Listeners
-form.addEventListener('submit', addItem);
+// Initialize app
+const init = () => {
+	// Event Listeners
+	form.addEventListener('submit', onAddItemSubmit);
 
-closeModal.addEventListener('click', () => {
-	modal.close();
-});
+	closeModal.addEventListener('click', () => {
+		modal.close();
+	});
 
-list.addEventListener('click', removeItem);
+	list.addEventListener('click', removeItem);
 
-clearButton.addEventListener('click', clearItems);
+	clearButton.addEventListener('click', clearItems);
 
-modalTwoDeclane.addEventListener('click', () => {
-	modalTwo.close();
-});
+	modalTwoDeclane.addEventListener('click', () => {
+		modalTwo.close();
+	});
 
-modalTwoConfirm.addEventListener('click', deleteItems);
+	modalTwoConfirm.addEventListener('click', deleteItems);
 
-itemFilter.addEventListener('input', filterItems);
+	itemFilter.addEventListener('input', filterItems);
 
-checkUI();
+	document.addEventListener('DOMContentLoaded', displayItems);
+
+	checkUI();
+};
+
+init();
