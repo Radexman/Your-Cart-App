@@ -10,8 +10,9 @@ $clr-primary: #D0D3D9;
 $clr-secondary: #8B8C81;
 $clr-teriary: #BFBDA4;
 $clr-teriary-dark: #59533F;
-$clr-text: #0D0D0D;
-$clr-red: #a10202;
+$clr-text: #141414;
+$clr-red: #a10202ad;
+$clr-green: #28ac17b9;
 
 // Input
 @mixin input {
@@ -61,17 +62,17 @@ $clr-red: #a10202;
 
 // Button types 
 @mixin btnPositive {
-    background-color: #28ac17b9;
+    background-color: $clr-green;
 }
 
 @mixin btnNegative {
-    background-color: #a10202ad;
+    background-color: $clr-red;
 }
 
 // Hover
 @mixin hover {
-    background-color: $clr-teriary-dark;
-    box-shadow: 3px 3px 5px $clr-text;
+    backdrop-filter: contrast(0%);
+    box-shadow: 5px 5px 8px $clr-text;
 }
 
 // Active
