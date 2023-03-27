@@ -6,8 +6,11 @@ const itemFilter = document.querySelector('.filter__input');
 const formBtn = itemForm.querySelector('.form__button');
 const itemsAmount = document.querySelector('.list-amount');
 const modalOne = document.querySelector('.modal');
+const modalTwo = document.querySelector('.modal-two');
 const modalOneText = document.querySelector('.modal-text');
 const closeModalOne = document.querySelector('.close-modal');
+const modalTwoConfirm = document.querySelector('#modal-two-confirm');
+const modalTwoDecline = document.querySelector('#modal-two-decline');
 let isEditMode = false;
 
 function displayItems() {
@@ -25,9 +28,6 @@ function onAddItemSubmit(e) {
 	if (newItem === '') {
 		modalOneText.textContent = 'Wprowadź przedmiot';
 		modalOne.showModal();
-		closeModalOne.addEventListener('click', () => {
-			modalOne.close();
-		});
 		return;
 	}
 
@@ -41,7 +41,8 @@ function onAddItemSubmit(e) {
 		isEditMode = false;
 	} else {
 		if (checkIfItemExists(newItem)) {
-			alert('That item already exists!');
+			modalOneText.textContent = 'Ten produkt już jest na liście';
+			modalOne.showModal();
 			return;
 		}
 	}
@@ -133,15 +134,13 @@ function setItemToEdit(item) {
 }
 
 function removeItem(item) {
-	if (confirm('Are you sure?')) {
-		// Remove item from DOM
-		item.remove();
+	// Remove item from DOM
+	item.remove();
 
-		// Remove item from storage
-		removeItemFromStorage(item.textContent);
+	// Remove item from storage
+	removeItemFromStorage(item.textContent);
 
-		checkUI();
-	}
+	checkUI();
 }
 
 function removeItemFromStorage(item) {
@@ -155,14 +154,17 @@ function removeItemFromStorage(item) {
 }
 
 function clearItems() {
-	while (itemList.firstChild) {
-		itemList.removeChild(itemList.firstChild);
-	}
+	modalTwo.showModal();
+	modalTwoConfirm.addEventListener('click', () => {
+		while (itemList.firstChild) {
+			itemList.removeChild(itemList.firstChild);
+		}
 
-	// Clear from localStorage
-	localStorage.removeItem('items');
-
-	checkUI();
+		// Clear from localStorage
+		localStorage.removeItem('items');
+		modalTwo.close();
+		checkUI();
+	});
 }
 
 function filterItems(e) {
@@ -178,6 +180,14 @@ function filterItems(e) {
 			item.style.display = 'none';
 		}
 	});
+}
+
+function closeModal() {
+	modalOne.close();
+}
+
+function closeModalTwo() {
+	modalTwo.close();
 }
 
 function checkUI() {
@@ -217,6 +227,8 @@ function init() {
 	clearBtn.addEventListener('click', clearItems);
 	itemFilter.addEventListener('input', filterItems);
 	document.addEventListener('DOMContentLoaded', displayItems);
+	closeModalOne.addEventListener('click', closeModal);
+	modalTwoDecline.addEventListener('click', closeModalTwo);
 
 	checkUI();
 }
