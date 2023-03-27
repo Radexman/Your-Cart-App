@@ -12,12 +12,13 @@ This app is a supprot tool created for making shopping easier and more comfortab
 -   Dynamic UI reacting to user interactions.
 -   Ability to change already existing items.
 -   Check that prevents duplicates.
+-   Search text filed for finding existing product.
+-   Displays current amount of items on the list.
 
 ## **To Add**
 
 -   Dark mode switcher.
 -   Small smooth animations that enhance UX.
--   Display current amount of items.
 
 ---
 

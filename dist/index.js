@@ -11,6 +11,7 @@ const modalTwoDeclane = document.querySelector('#modal-two-decline');
 const clearButton = document.querySelector('.button-clear');
 const itemFilter = document.querySelector('.filter__input');
 const formBtn = form.querySelector('button');
+const listAmount = document.querySelector('.list-amount');
 let isEditMode = false;
 
 const displayItems = () => {
@@ -192,7 +193,8 @@ const filterItems = (e) => {
 const checkUI = () => {
 	itemInput.value = '';
 	const items = list.querySelectorAll('li');
-	if (items.length === 0) {
+	const amountOfItems = items.length;
+	if (amountOfItems === 0) {
 		clearButton.classList.add('not-active');
 		itemFilter.classList.add('not-active');
 	} else {
@@ -200,9 +202,18 @@ const checkUI = () => {
 		itemFilter.classList.remove('not-active');
 	}
 
+	if (amountOfItems === 0) {
+		listAmount.className = 'not-active';
+	} else if (amountOfItems > 0) {
+		listAmount.classList.remove('not-active');
+		listAmount.classList.add('list-amount');
+		listAmount.textContent = amountOfItems;
+	}
+
 	formBtn.innerHTML = '<i class="fa-solid fa-plus"></i> Dodaj Produkt';
 	formBtn.classList.remove('green-btn');
 	formBtn.style.color = '#D0D3D9';
+
 	isEditMode = false;
 };
 
