@@ -19,6 +19,10 @@ This app is a supprot tool created for making shopping easier and more comfortab
 
 -   Dark mode switcher.
 -   Small smooth animations that enhance UX.
+-   Add dynamic counter.
+-   Add modal for empty submit.
+-   Add modal for clear all.
+-   Add modal for item exists.
 
 ---
 
