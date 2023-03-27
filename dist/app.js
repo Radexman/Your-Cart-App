@@ -4,6 +4,7 @@ const itemList = document.querySelector('.items');
 const clearBtn = document.querySelector('.button-clear');
 const itemFilter = document.querySelector('.filter__input');
 const formBtn = itemForm.querySelector('.form__button');
+const itemsAmount = document.querySelector('.list-amount');
 let isEditMode = false;
 
 function displayItems() {
@@ -176,6 +177,7 @@ function checkUI() {
 	itemInput.value = '';
 
 	const items = itemList.querySelectorAll('li');
+	const amount = items.length;
 
 	if (items.length === 0) {
 		clearBtn.style.display = 'none';
@@ -183,6 +185,14 @@ function checkUI() {
 	} else {
 		clearBtn.style.display = 'block';
 		itemFilter.style.display = 'block';
+	}
+
+	if (amount === 0) {
+		itemsAmount.className = 'not-active';
+	} else if (amount > 0) {
+		itemsAmount.classList.remove('not-active');
+		itemsAmount.classList.add('list-amount');
+		itemsAmount.textContent = amount;
 	}
 
 	formBtn.innerHTML = '<i class="fa-solid fa-plus"></i> Dodaj Produkt';
