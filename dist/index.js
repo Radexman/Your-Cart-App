@@ -10,7 +10,7 @@ const modalTwoConfirm = document.querySelector('#modal-two-confirm');
 const modalTwoDeclane = document.querySelector('#modal-two-decline');
 const clearButton = document.querySelector('.button-clear');
 const itemFilter = document.querySelector('.filter__input');
-const formBtn = form.querySelector('button');
+const formBtn = document.querySelector('.form__button');
 const listAmount = document.querySelector('.list-amount');
 let isEditMode = false;
 
@@ -36,7 +36,6 @@ const onAddItemSubmit = (e) => {
 
 	// Check for edit mode
 	if (isEditMode) {
-		itemValue;
 		const itemToEdit = list.querySelector('.edit-mode');
 
 		removeItemFromStorage(itemToEdit.textContent);
