@@ -5,6 +5,9 @@ const clearBtn = document.querySelector('.button-clear');
 const itemFilter = document.querySelector('.filter__input');
 const formBtn = itemForm.querySelector('.form__button');
 const itemsAmount = document.querySelector('.list-amount');
+const modalOne = document.querySelector('.modal');
+const modalOneText = document.querySelector('.modal-text');
+const closeModalOne = document.querySelector('.close-modal');
 let isEditMode = false;
 
 function displayItems() {
@@ -20,7 +23,11 @@ function onAddItemSubmit(e) {
 
 	// Validate Input
 	if (newItem === '') {
-		alert('Please add an item');
+		modalOneText.textContent = 'Wprowadź przedmiot';
+		modalOne.showModal();
+		closeModalOne.addEventListener('click', () => {
+			modalOne.close();
+		});
 		return;
 	}
 
