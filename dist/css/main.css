@@ -17,6 +17,7 @@
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+  padding-left: 2em;
 }
 .header__logo {
   width: 80px;
@@ -25,21 +26,8 @@
 .header__h1 {
   font-family: "Pacifico", cursive;
   font-size: 2.4rem;
-}
-.header .list-amount {
-  width: 50px;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  background-color: #8B8C81;
-  border: 2px solid #141414;
-  font-weight: 700;
-  color: #141414;
-  display: grid;
-  place-content: center;
-  font-size: 1.2rem;
-  position: relative;
-  top: -150px;
-  right: -100px;
+  text-align: center;
+  margin-bottom: 45px;
 }
 
 .main {
@@ -47,6 +35,8 @@
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+  margin-top: -45px;
+  width: 100vw;
 }
 .main .form {
   display: flex;
@@ -55,7 +45,7 @@
   justify-content: center;
 }
 .main .form__control .form__input {
-  min-width: 350px;
+  width: 50vw;
   text-align: center;
   padding: 0.4em;
   margin-top: 0.4rem;
@@ -63,7 +53,7 @@
   border-radius: 4px;
 }
 .main .form__control .form__button {
-  min-width: 350px;
+  width: 50vw;
   text-align: center;
   padding: 0.4em;
   margin-top: 0.4rem;
@@ -84,12 +74,15 @@
   margin-right: 0.7rem;
 }
 .main .filter__input {
-  min-width: 350px;
+  width: 50vw;
   text-align: center;
   padding: 0.4em;
   margin-top: 0.4rem;
   border: 2px solid #141414;
   border-radius: 4px;
+}
+.main h2 {
+  margin-top: 30px;
 }
 .main .modal,
 .main .modal-two {
@@ -132,6 +125,23 @@
   font-size: 1.4rem;
   font-weight: 700;
 }
+.main .list-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main .list-details .list-amount {
+  width: 35px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: #8B8C81;
+  border: 2px solid #141414;
+  font-weight: 700;
+  color: #141414;
+  display: grid;
+  place-content: center;
+  font-size: 1rem;
+}
 
 .btn-positive {
   background-color: rgba(40, 172, 23, 0.7254901961);
@@ -142,13 +152,13 @@
 }
 
 .items {
-  margin-top: 30px;
   display: flex;
   flex-flow: column nowrap;
   list-style: none;
+  width: 50%;
 }
 .items__item {
-  min-width: 350px;
+  width: 100%;
   border: 2px solid #141414;
   display: flex;
   justify-content: space-between;
@@ -177,7 +187,7 @@
 }
 
 .button-clear {
-  min-width: 350px;
+  width: 50vw;
   text-align: center;
   padding: 0.4em;
   margin-top: 0.4rem;
@@ -220,6 +230,12 @@ img, picture, svg, video {
 
 input, textarea, button, select {
   font: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Pacifico", cursive;
 }
 
 body {

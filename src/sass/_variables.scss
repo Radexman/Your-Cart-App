@@ -17,7 +17,7 @@ $clr-green: #28ac17b9;
 
 // Input
 @mixin input {
-    min-width: 350px;
+    width: 50vw;
     text-align: center;
     padding: .4em;
     margin-top: .4rem;
@@ -27,7 +27,7 @@ $clr-green: #28ac17b9;
 
 // Item
 @mixin item {
-    min-width: 350px;
+    width: 100%;
     border: $brd-main;
     display: flex;
     justify-content: space-between;

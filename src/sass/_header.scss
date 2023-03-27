@@ -5,6 +5,7 @@
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+    padding-left: 2em;
 
     &__logo {
         width: 80px;
@@ -14,22 +15,8 @@
     &__h1 {
         font-family: $font-brand;
         font-size: 2.4rem;
-    }
-
-    .list-amount {
-        width: 50px;
-        aspect-ratio: 1 / 1;
-        border-radius: 50%;
-        background-color: $clr-secondary;
-        border: $brd-main;
-        font-weight: 700;
-        color: $clr-text;
-        display: grid;
-        place-content: center;
-        font-size: 1.2rem;
-        position: relative;
-        top: -150px;
-        right: -100px;
+        text-align: center;
+        margin-bottom: 45px;
     }
 }
 
@@ -38,6 +25,8 @@
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+    margin-top: -45px;
+    width: 100vw;
 
     .form {
         display: flex;
@@ -77,6 +66,10 @@
         }
     }
 
+    h2 {
+        margin-top: 30px;
+    }
+
     .modal,
     .modal-two {
         @include modal;
@@ -103,6 +96,25 @@
             font-size: 1.4rem;
             font-weight: 700;
         }
+    }
+
+    .list-details {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .list-amount {
+        width: 35px;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        background-color: $clr-secondary;
+        border: $brd-main;
+        font-weight: 700;
+        color: $clr-text;
+        display: grid;
+        place-content: center;
+        font-size: 1rem;
+    }
     }
 }
 

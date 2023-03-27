@@ -1,9 +1,9 @@
 // Styles for list
 .items {
-    margin-top: 30px;
     display: flex;
     flex-flow: column nowrap;
     list-style: none;
+    width: 50%;
 
     &__item {
         @include item;

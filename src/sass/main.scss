@@ -31,6 +31,12 @@ input, textarea, button, select {
     font: inherit;
 }
 
+h1,
+h2,
+h3 {
+    font-family: $font-brand;
+}
+
 body {
     background-color: $clr-primary;
     color: $clr-text;
