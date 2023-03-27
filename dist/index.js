@@ -3,6 +3,7 @@ const form = document.querySelector('.form');
 const itemInput = document.querySelector('.form__input');
 const list = document.querySelector('.items');
 const modal = document.querySelector('.modal');
+const modalText = document.querySelector('.modal-text');
 const modalTwo = document.querySelector('.modal-two');
 const closeModal = document.querySelector('.close-modal');
 const modalTwoConfirm = document.querySelector('#modal-two-confirm');
@@ -27,18 +28,26 @@ const onAddItemSubmit = (e) => {
 
 	// Validation
 	if (itemValue === '') {
+		modalText.innerText = 'Wprowadź Produkt';
 		modal.showModal();
 		return;
 	}
 
 	// Check for edit mode
 	if (isEditMode) {
+		itemValue;
 		const itemToEdit = list.querySelector('.edit-mode');
 
 		removeItemFromStorage(itemToEdit.textContent);
 		itemToEdit.classList.remove('edit-mode');
 		itemToEdit.remove();
 		isEditMode = false;
+	} else {
+		if (checkIfItemExists(itemValue)) {
+			modalText.innerText = 'Ten przedmiot już jest na liście';
+			modal.showModal();
+			return;
+		}
 	}
 
 	// Create item DOM element
@@ -110,6 +119,12 @@ const onClickItem = (e) => {
 	}
 };
 
+const checkIfItemExists = (item) => {
+	const itemsFromStorage = getItemsFromStorage();
+
+	return itemsFromStorage.includes(item);
+};
+
 const setItemToEdit = (item) => {
 	isEditMode = true;
 
@@ -120,6 +135,7 @@ const setItemToEdit = (item) => {
 	formBtn.innerHTML = '<i class="fa-solid fa-pen"></i> Zmień nazwę';
 	formBtn.classList.add('green-btn');
 	itemInput.value = item.textContent;
+	itemInput.focus();
 };
 
 const removeItem = (item) => {
@@ -174,6 +190,7 @@ const filterItems = (e) => {
 };
 
 const checkUI = () => {
+	itemInput.value = '';
 	const items = list.querySelectorAll('li');
 	if (items.length === 0) {
 		clearButton.classList.add('not-active');
