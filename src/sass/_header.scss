@@ -5,7 +5,6 @@
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    padding-left: 2em;
 
     &__logo {
         width: 80px;
@@ -16,7 +15,6 @@
         font-family: $font-brand;
         font-size: 2.4rem;
         text-align: center;
-        margin-bottom: 45px;
     }
 }
 
@@ -25,14 +23,8 @@
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    margin-top: -45px;
-    width: 100vw;
 
     .form {
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        justify-content: center;
 
         &__control {
             
@@ -104,9 +96,11 @@
         justify-content: center;
 
         .list-amount {
-        width: 35px;
+        width: 40px;
         aspect-ratio: 1 / 1;
         border-radius: 50%;
+        margin-top: 40px;
+        margin-left: 15px;
         background-color: $clr-secondary;
         border: $brd-main;
         font-weight: 700;

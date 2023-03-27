@@ -49,7 +49,7 @@ $clr-green: #28ac17b9;
     border: $brd-main;
     border-radius: $brd-radius-small;
     margin: 9rem auto;
-    width: 350px;
+    width: 50vw;
     text-align: center;
     box-shadow: none;
 }
@@ -103,3 +103,8 @@ $brd-main: 2px solid $clr-text;
 
 // Transition
 $transition: .2s ease-in;
+
+// Min size 
+@mixin small {
+    width: 80vw;
+}

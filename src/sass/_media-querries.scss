@@ -1,0 +1,12 @@
+@media screen and (max-width: 500px) {
+    .items,
+    .filter__input,
+    .button-clear,
+    .main .filter__input,
+    .main .form__control .form__button, 
+    .main .form__control .form__input {
+        @include small;
+    }
+
+    
+}
