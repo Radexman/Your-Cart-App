@@ -61,7 +61,7 @@ function onAddItemSubmit(e) {
 function addItemToDOM(item) {
 	// Create list item
 	const li = document.createElement('li');
-	li.className = 'items__item';
+	li.classList.add('items__item');
 	li.appendChild(document.createTextNode(item));
 
 	const button = createButton('items__button remove-item');
@@ -135,6 +135,7 @@ function setItemToEdit(item) {
 
 function removeItem(item) {
 	// Remove item from DOM
+	item.classList.add('animate');
 	item.remove();
 
 	// Remove item from storage

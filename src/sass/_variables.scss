@@ -104,6 +104,11 @@ $brd-main: 2px solid $clr-text;
 // Transition
 $transition: .2s ease-in;
 
+// Animation
+.animate {
+    transform: translateX(-150px);
+}
+
 // Min size 
 @mixin small {
     width: 80vw;

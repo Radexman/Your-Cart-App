@@ -64,7 +64,7 @@ const onAddItemSubmit = (e) => {
 const addItemToDOM = (item) => {
 	// Create Item
 	const li = document.createElement('li');
-	li.className = 'items__item';
+	li.classList.add('items__item', 'animate');
 	const liText = document.createTextNode(item);
 	li.appendChild(liText);
 
