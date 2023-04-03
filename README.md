@@ -18,17 +18,6 @@ https://listazakupowwip4.netlify.app/
 -   Search text filed for finding existing product.
 -   Displays current amount of items on the list.
 
-## **To Add**
-
--   Dark mode switcher.
--   Small smooth animations that enhance UX.
--   Add dynamic counter.
--   Add modal for empty submit.
--   Add modal for clear all.
--   Add modal for item exists.
-
----
-
 ## **Tech Used**
 
 -   SASS, partials, mixins, variables.
