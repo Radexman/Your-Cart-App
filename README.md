@@ -1,8 +1,11 @@
-# **Your Cart App**
+# **Lista Zakupów**
 
 ## **Overview**
 
-This app is a supprot tool created for making shopping easier and more comfortable. It utilizes web storage to ensure that the state of list doesn't dissapear. This app was made in mind with smartphone users.
+This app is a supprot tool created for making shopping easier and more comfortable. It utilizes web storage to ensure that the state of list doesn't dissapear. This app was made in mind with smartphone users. Dynamic UI adapts to your actions displaying information and disappearing while the feature is not being used.
+
+Site Link:
+https://listazakupowwip4.netlify.app/
 
 ## **Features**
 
