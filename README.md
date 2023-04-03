@@ -1,4 +1,4 @@
-# **Lista Zakupów**
+# **Shopping List**
 
 ## **Overview**
 
